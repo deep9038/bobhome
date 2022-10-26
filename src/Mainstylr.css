@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+.maiDdiv{
+    background-color: rgb(108, 107, 105);
+    height: 100vh;
+    padding: 10px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-size: rem; */
+    font-family: 'Quicksand', sans-serif;
+}
+::-webkit-scrollbar{display: none;}

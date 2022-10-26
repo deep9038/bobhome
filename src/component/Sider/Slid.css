@@ -1,0 +1,74 @@
+
+
+
+
+
+.cat-slider{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    max-width: 100%;
+    height: inherit;
+    padding: 0;
+overflow-y:auto;
+    scroll-behavior: smooth;
+    
+}
+.cat-slider::-webkit-scrollbar {
+    background: transparent; /* make scrollbar transparent */
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+  }
+.cat-slider li{
+      /* background:#FF61F6; */
+      color: #fff;
+      /* background-color: rgb(81, 138, 124); */
+      
+      padding: 8px;
+      border-radius: 4px;
+ 
+      height: 80px;
+      min-width: 100px;
+      white-space: nowrap;
+    }
+    .App {
+        font-family: sans-serif;
+        text-align: center;
+        width: 100%;
+        height: 20vh;
+     overflow-y:hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+  
+.prev,.next{
+     border: 0;
+    color: rgb(119, 119, 119);
+    font-size: 24px;
+    margin: 0 8px; 
+  }
+  .prev svg ,.next svg{
+    color: #3e5251;
+  }
+
+  .next{
+    z-index: 1;
+  }
+
+  /* car */
+  .slid-card{
+    background-color: rgb(112, 224, 224);
+  }
+  .cat-link h4{
+    font-size: inherit;
+  }
+  /* button  */
+  .next,.prev{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  color: black;
+  }

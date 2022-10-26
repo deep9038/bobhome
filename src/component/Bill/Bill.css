@@ -1,0 +1,22 @@
+.gstdot{
+    display: none;
+}
+@media print {
+   table{
+       border: none;
+       outline: none;
+       background: none;
+   }
+   tr{
+    border: none;
+    background: none;
+    outline: none;
+   }
+   .gstdot{
+    display: inline-block
+    
+}
+.setOpenBill{
+    display: none;
+}
+}
