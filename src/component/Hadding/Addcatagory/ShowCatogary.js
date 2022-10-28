@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import IndivisualCatogaryItem from "./IndivisualCatogaryItem";
 
-const ShowCatogary = ({ctagoryes,setShowCatogaryItem,seteditCatmol}) => {
+const ShowCatogary = ({ctagoryes,setShowCatogaryItem,seteditCatmol,setUpdtCatId}) => {
   
   return (
     <>
@@ -26,7 +26,7 @@ const ShowCatogary = ({ctagoryes,setShowCatogaryItem,seteditCatmol}) => {
       {ctagoryes.map((item)=>{
         console.log(item);
         return(
-        <IndivisualCatogaryItem seteditCatmol={seteditCatmol} item={item} setShowCatogaryItem={setShowCatogaryItem} />
+        <IndivisualCatogaryItem setUpdtCatId={setUpdtCatId} seteditCatmol={seteditCatmol} item={item} setShowCatogaryItem={setShowCatogaryItem} />
         )
       })}
       

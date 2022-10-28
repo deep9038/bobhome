@@ -13,10 +13,13 @@ import { FButton } from "../../FormButtonEliment";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+import AddOnEdit from "./AddOnEdit";
 const AddOn = ({ setopenAddon,item }) => {
   const [addonName, setAddonName] = useState();
   const [addonPrice, setAddonPrice] = useState();
   const [openAllAddon,setAllAddo ]=useState(false)
+  const [openAddOn,setOpenAdd]=useState(false)
+  const [addOnId,setAddOnid]=useState()
   const baseUrl = "http://127.0.0.1:2000";
   const config = { headers: { "Content-Type": "multipart/form-data" } };
   const handelAddonsubmit = (e) => {
@@ -43,6 +46,10 @@ const AddOn = ({ setopenAddon,item }) => {
     setAllAddo(!openAllAddon)
   } ;
 
+  const AddonUpdet=()=>{
+
+  }
+
   return (
     <>
     <AddOnModalContainer
@@ -55,7 +62,7 @@ const AddOn = ({ setopenAddon,item }) => {
         id="outlined-basic"
         label="Addon Name"
         variant="outlined"
-        color="success"
+        
         value={addonName}
         style={{ width: "100%", marginBottom: "15px" }}
       />
@@ -97,8 +104,8 @@ const AddOn = ({ setopenAddon,item }) => {
       </Buttongroup>
     
     </AddOnModalContainer>
-    {openAllAddon && <ShowAddOnItem item={item}/> }
-    
+    {openAllAddon && <ShowAddOnItem setOpenAdd={setOpenAdd} setAddOnid={setAddOnid} item={item}/> }
+    {openAddOn && <AddOnEdit setOpenAdd={setOpenAdd}/>}
     <ToastContainer position="top-center" theme="colored" autoClose={3000} />
     </>
   );

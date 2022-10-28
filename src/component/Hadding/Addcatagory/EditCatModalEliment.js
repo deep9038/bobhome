@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const ModalBoxContainer=styled.div`
+export const ModalBoxContainer=styled.form`
 background-color:rgba(223, 223, 239, 0.47);
 height:100vh;
 width:100vw;

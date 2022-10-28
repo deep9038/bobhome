@@ -3,11 +3,16 @@ import {AiFillEdit,AiFillDelete} from 'react-icons/ai'
 import "bootstrap/dist/css/bootstrap.css";
 import Switch from "@material-ui/core/Switch";
 import axios from 'axios';
-import EditCatModal from './EditCatModal';
-const IndivisualCatogaryItem = ({item,setShowCatogaryItem,seteditCatmol}) => {
+
+const IndivisualCatogaryItem = ({item,setShowCatogaryItem,seteditCatmol,setUpdtCatId}) => {
     
 
+
+    // nonComplite
    const onEdit=()=>{
+    axios.post(`http://127.0.0.1:2000/api/categoryUpdate_post/${item._id}`).then((res)=>console.log(res))
+
+    setUpdtCatId(item._id)
     seteditCatmol(true)
     setShowCatogaryItem(false)
 

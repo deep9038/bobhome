@@ -19,6 +19,7 @@ const AddCatagory = ({ setOpenCart,ctagoryes }) => {
   const [catName, setCatName] = useState();
   const [showCatogaryItem, setShowCatogaryItem] = useState(false);
   const [editCatmodal,seteditCatmol]=useState(false)
+  const [UpdtCatId,setUpdtCatId]=useState('')
   // const [ allCat,setAllcat]=useState(false)
   const baseUrl = "http://127.0.0.1:2000";
   const config = { headers: { "Content-Type": "multipart/form-data" } };
@@ -102,8 +103,8 @@ const AddCatagory = ({ setOpenCart,ctagoryes }) => {
           </FButton>
         </Buttongroup>
       </Addcatagory>
-      { showCatogaryItem &&  <ShowCatogary seteditCatmol={seteditCatmol}  setShowCatogaryItem={setShowCatogaryItem} ctagoryes={ctagoryes} /> }
-      {editCatmodal && <EditCatModal seteditCatmol={seteditCatmol} />}
+      { showCatogaryItem &&  <ShowCatogary setUpdtCatId={setUpdtCatId} seteditCatmol={seteditCatmol}  setShowCatogaryItem={setShowCatogaryItem} ctagoryes={ctagoryes} /> }
+      {editCatmodal && <EditCatModal UpdtCatId={UpdtCatId} seteditCatmol={seteditCatmol} />}
     </>
   );
 };
