@@ -5,11 +5,16 @@ import axios from "axios";
 
 const IndivisualAddOnItem = ({ item, setAddOnid, setOpenAdd }) => {
   const handelAddonEdit = () => {
-    setOpenAdd(true)
+    
     setAddOnid(item);
     axios
       .get(`http://127.0.0.1:2000/api/editAddOnItem/${item._id}`)
       .then((res) => console.log(res));
+
+      setOpenAdd(true)
+
+
+      
   };
   console.log(item);
   const onDelite = () => {
