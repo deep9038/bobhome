@@ -50,7 +50,7 @@ const Body = ({
     } else {
       setCustomerSurch(true);
     }
-    console.log(customerSurh);
+   
   };
 
   return (

@@ -5,8 +5,21 @@ import Switch from "@material-ui/core/Switch";
 import axios from 'axios';
 
 const IndivisualCatogaryItem = ({item,setShowCatogaryItem,seteditCatmol,setUpdtCatId}) => {
-    
+    const [activation,setActivation]=useState()
 
+
+
+    // handel Activation 
+
+    const handelSwich=(e)=>{
+        const chaked =e.target.checked
+        setActivation(!chaked)
+        axios.post(`http://127.0.0.1:2000/api//activetionStatusCategory/${item._id}`,
+        
+        {
+            Active:activation
+        }).then((res)=>console.log(res))
+    }
 
     // nonComplite
    const onEdit=()=>{
@@ -43,7 +56,7 @@ const IndivisualCatogaryItem = ({item,setShowCatogaryItem,seteditCatmol,setUpdtC
                 <div className='button-item' style={{width:"100px",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
                    <h5 style={{cursor: 'pointer',color:"rgb(255, 230, 0)"}} onClick={onEdit}> <AiFillEdit /></h5>
                    <h5 style={{cursor: 'pointer',color:"red",marginLeft:"10px"}} onClick={onDelit}> <AiFillDelete /></h5>
-                   <h5><Switch/>  </h5>
+                   <h5  ><Switch checked={item.Active} onChange={handelSwich}  />  </h5>
                     
                 </div>   
 

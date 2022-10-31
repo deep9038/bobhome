@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import "bootstrap/dist/css/bootstrap.css";
 import Switch from "@material-ui/core/Switch";
 import axios from "axios";
 import './ShowallItem.css'
+
 const ShowAll_Item = ({ item }) => {
+
+
+  const handelEdit=()=>{
+
+  }
+
   return (
     <>
       <div
@@ -56,9 +63,19 @@ const ShowAll_Item = ({ item }) => {
         style={{ maxHeight: "55vh", overflow: "scroll", width: "100%" }}
       >
         {item.map((item) => {
-          console.log(item);
+         var active = !item._id
+          const handelActive=()=>{
+              axios.post(`http://127.0.0.1:2000/api/activetionStatusItem/${item._id}`,{
+                Active:active
+              }).then((res)=>{
+                console.log(res);
+              })
+          }
+
+
+
+
           const onDelit = () => {
-            
             axios
               .get(`http://127.0.0.1:2000/api/itemDelete/${item._id}`)
               .then((res) => {
@@ -115,8 +132,8 @@ const ShowAll_Item = ({ item }) => {
                   alignItems: "center",
                 }}
               >
-                <h5 style={{ cursor: "pointer", color: "rgb(255, 230, 0)" }}>
-                  {" "}
+                <h5 style={{ cursor: "pointer", color: "rgb(255, 230, 0)" }}   onClick={handelEdit(item._id)}>
+               
                   <AiFillEdit />
                 </h5>
                 <h5
@@ -129,8 +146,8 @@ const ShowAll_Item = ({ item }) => {
                   {" "}
                   <AiFillDelete onClick={onDelit} />
                 </h5>
-                <h5>
-                  <Switch />{" "}
+                <h5  >
+                  <Switch checked={item.Active} onChange={handelActive}/>{" "}
                 </h5>
               </div>
             </div>

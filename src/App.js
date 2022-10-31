@@ -60,11 +60,7 @@ function App() {
         ? JSON.parse(localStorage.getItem("cartItem"))
         : []
     );
-  }, []);
-
-  useEffect(() => {
-    console.log(totalPrice);
-  }, []);
+  },[]);
   // remove
   const onRemove = (projuts) => {
     const exist = cartItem.find((item) => item._id === projuts._id);
